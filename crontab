@@ -1,0 +1,4 @@
+* * * * * root /home/UploadFiles.py
+#* * * * * root /home/UploadFiles.py >> /var/log/cron.log
+# Don't remove the empty line at the end of this file. It is required to run the cron job
+

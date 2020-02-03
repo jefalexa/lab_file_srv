@@ -1,0 +1,20 @@
+## Build the container locally to test:  
+docker build -t gcp_sshd:v10 .
+docker run -d -p 2222:22 --name test_sshd_v10 gcp_sshd:v10
+docker ps
+
+docker exec -ti test_sshd_v10 /bin/bash
+
+docker kill test_sshd_v10
+docker ps
+
+
+
+## Build the container for GCP and push it to the GCP repo:  
+docker build -t gcr.io/homelab-266121/gcp_sshd:v10 .
+docker push gcr.io/homelab-266121/gcp_sshd:v10
+
+## Repo:  https://console.cloud.google.com/gcr/images/homelab-266121/GLOBAL/gcp_sshd?project=homelab-266121&gcrImageListsize=30
+
+
+
